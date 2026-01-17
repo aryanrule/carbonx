@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* 
+@import url('https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: "REM", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;  
+  font-style: normal;
+} */
+
+body{
+  overflow-x: hidden;
+}
+
+
+.gradient-text {
+  background-image: linear-gradient(to right, #54b3d6, #54b3d6 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.3s ease-in-out;
+}
+
+.gradient-text:hover {
+  background-position: 0;
+}
+
+.hover-underline::before {
+  content: '';
+  background-color: #004838 ;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: width 0.3s ease-in-out;
+}
+
+.hover-underline:hover::before {
+  width: 100%;
+}
+
+
+
+/* Define the animation */
+@keyframes popIn {
+  0% {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0; /* Invisible */
+  }
+  100% {
+    transform: translateX(0); /* End at the normal position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Apply the animation to your button or component */
+.button {
+  animation: popIn 1s ease-out forwards;
+}
+
+.image {
+  animation: popIn 1s ease-out forwards;
+  animation-delay: 0.5s; /* Optional: delay for different timing */
+}
+
+/* For right side pop-in */
+.button-right {
+  animation: popInRight 1s ease-out forwards;
+}
+
+@keyframes popInRight {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+    opacity: 0; /* Invisible */
+  }
+  100% {
+    transform: translateX(0); /* End at the normal position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+.pointer1 {
+  position: relative;
+  animation-name: circleOne;
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; /* Keeps the animation looping */
+}
+
+@keyframes circleOne {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 100px;
+    top: 0px;
+  }
+  50% {
+    left: 100px;
+    top: 100px;
+  }
+  75% {
+    left: 0px;
+    top: 100px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+
+.pointer2 {
+  position: relative;
+  animation-name: circleTwo;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; 
+}
+
+
+@keyframes circleTwo {
+  0% {
+    left: 0px;
+    bottom: 0px;
+  }
+  25% {
+    left: 100px;
+    bottom: 0px;
+  }
+  50% {
+    left: 100px;
+    bottom: 100px;
+  }
+  75% {
+    left: 0px;
+    bottom: 100px;
+  }
+  100% {
+    left: 0px;
+    bottom: 0px;
+  }
+}
+
+
+.pointer3{
+  position: relative;
+  animation-name: circleThree;
+  animation-delay: 0.6s;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+} 
+
+@keyframes circleThree {
+  0% {
+    right: 0px;
+    top: 0px;
+
+  }
+  25%{
+    right: 100px;
+    top: 0px;
+  }
+  50%{
+    right: 100px;
+    top: 100px;
+  }
+  75%{
+    right: 0px;
+    top: 100px;
+  }
+  100%{
+    right: 0px;
+    top: 0px;
+  }
+}
+
+.pointer4{
+  position: relative;
+  animation-name: circleFour;
+  animation-delay: 0.2s;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+} 
+
+@keyframes circleFour {
+  0% {
+    right: 0px;
+    bottom: 0px;
+  }
+  25% {
+    right: 100px;
+    bottom: 0px;
+  }
+  50% {
+    right: 100px;
+    bottom: 100px;
+  }
+  75% {
+    right: 0px;
+    bottom: 100px;
+  }
+  100% {
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.scroll1 {
+  animation-name: hello;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; /* Keeps the final state */
+  animation-timeline:view();
+  animation-range: entry 0% cover 0%;
+}
+
+@keyframes hello {
+  from {
+    opacity: 0;
+    transform: scale(0.4); /* Corrected scale */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.circlePosition{
+  animation-name: c1;
+  
+}
+
+.main{
+   animation-name: mainAnimation;
+   animation-duration: 1s;
+   
+}
+
+@keyframes mainAnimation {
+   from{
+     opacity: 0;
+     scale: 0.5;
+   }
+   to{
+    opacity: 1;
+    scale: 1;
+   }
+}
+
+
+.AnimateType1{
+  animation-name: appear;
+}
+
+
+ 
+.form-style {
+  @apply rounded-lg  p-3 text-[16px] leading-[24px] text-black shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none;
+}  
+/* 
+.section_heading {
+  @apply text-2xl font-bold text-richblack-5 lg:text-4xl;
+} */
+/* 
+
+.form-style {
+  @apply rounded-lg bg-white p-3 text-[16px] leading-[24px] text-white shadow-[0_1px_0_0] shadow-white/50  focus:outline-none;
+} */
+
+.lable-style {
+  @apply text-[14px] text-black;
+}
+
+.yellowButton {
+  @apply cursor-pointer rounded-md bg-yellow-50 px-[20px] py-[8px] font-semibold text-richblack-900;
+}
+
+
+.blackButton {
+  @apply cursor-pointer rounded-md bg-richblack-800 px-[20px] py-[8px] font-semibold text-richblack-5;
+}
+
+
+.greenButton {
+  @apply cursor-pointer rounded-md bg-mango-green px-[20px] py-[8px] font-semibold text-white;
+}
+
+
+
+
