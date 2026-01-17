@@ -11,6 +11,11 @@ import UserLayout from "./Major_components/layouts/UserLayout.jsx";
 // import {Dashboard , Reports , Settings } from "./Major_components/Pages/User";
 import EntityOnboardin from "./Major_components/Pages/Admin/EntityOnboardin.jsx";
  
+// just making some changes
+
+
+
+
 
 import Dashboard from "./Major_components/Pages/User/Dashboard.jsx"
 import Reports from "./Major_components/Pages/User/Reports.jsx"
